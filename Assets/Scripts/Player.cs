@@ -11,8 +11,12 @@ public class Player : MonoBehaviour
     public int cherries = 3;
     public bool isDead = false;
     public Image[] lives;
+
     PlayerMovement playerMovement;
     FrogEnemies frogEnemies;
+    EagleEnemies eagleEnemies;
+    OpossumEnemies opossumEnemies;
+    PigEnemies pigEnemies;
 
     void Awake() {
         if (Instance == null) {
@@ -22,6 +26,7 @@ public class Player : MonoBehaviour
         }
 
         playerMovement = GetComponent<PlayerMovement>();
+        lives = GameObject.Find("Health").GetComponentsInChildren<Image>();
     }
 
     void Update() {
@@ -35,10 +40,15 @@ public class Player : MonoBehaviour
             if (playerMovement.animator.GetFloat("yVelocity") < -1) {
                 playerMovement.SetKillEnemy(true);
                 playerMovement.Jump();
-                
+
                 if (other.gameObject.GetComponent<FrogEnemies>() != null) {
                     frogEnemies = other.gameObject.GetComponent<FrogEnemies>();
                     frogEnemies.animator.SetBool("isDead", true);
+                }
+
+                if (other.gameObject.GetComponent<EagleEnemies>() != null) {
+                    eagleEnemies = other.gameObject.GetComponent<EagleEnemies>();
+                    eagleEnemies.Die();
                 }
 
                 Destroy(other.gameObject, 0.5f);
@@ -80,6 +90,10 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.simulated = false;
         }
+
+        foreach (Animator animator in FindObjectsOfType<Animator>()) {
+            animator.enabled = false;
+        }
     }
 
     void UnfreezeTime() {
@@ -89,12 +103,36 @@ public class Player : MonoBehaviour
         foreach (Rigidbody2D rb in allRigidbodies) {
             rb.simulated = true;
         }
+
+        foreach (Animator animator in FindObjectsOfType<Animator>()) {
+            animator.enabled = true;
+        }
+    }
+
+    void ResetHealth() {
+        cherries = 3;
+        isDead = false;
+        for (int i = 0; i < lives.Length; i++) {
+            lives[i].enabled = true;
+        }
     }
 
     IEnumerator DelayedRestart() {
         yield return new WaitForSecondsRealtime(1f);
         UnfreezeTime();
+        ResetHealth();
+
+        playerMovement.animator.SetBool("isHurt", false);
+        playerMovement.isKnockedBack = false;
+        playerMovement.animator.SetFloat("xVelocity", 0);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        if (SceneManager.GetActiveScene().name == "LevelTwo") {
+            Player.Instance.transform.position = new Vector3(-2.96f, -3.81f);
+        } else if (SceneManager.GetActiveScene().name == "LevelOne") {
+            Player.Instance.transform.position = new Vector3(1.49f, -0.9850035f);
+        }
     }
 
     public void AddCherry() {

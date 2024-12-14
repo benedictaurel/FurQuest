@@ -7,6 +7,7 @@ public class OpossumEnemies : Enemy
     int changeValue = 1;
     public int nextWaypoint = 0;
     public float speed = 2;
+    public bool isDead = false;
 
     void Update() {
         MoveToNextPoint();
