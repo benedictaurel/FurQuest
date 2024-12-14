@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
-    Animator animator;
+    public Animator animator;
 
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform groundCheck;
@@ -17,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
 
     bool isFacingRight = true;
     bool isGrounded = false;
+    bool killEnemy = false;
+    bool isKnockedBack = false;
+    bool isDead = false;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() {
+        if (isDead) return;
+
         horizontalMove = Input.GetAxis("Horizontal");
 
         if (Input.GetButtonDown("Jump")) {
@@ -52,7 +58,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Knockback(bool isRight) {
+        animator.SetBool("isHurt", true);
+        isKnockedBack = true;
+        if (isRight) {
+            rb.velocity = new Vector2(-2f, rb.velocity.y);
+        } else {
+            rb.velocity = new Vector2(2f, rb.velocity.y);
+        }
+        StartCoroutine(ResetKnockback());
+    }
+
+    IEnumerator ResetKnockback() {
+        yield return new WaitForSeconds(1.5f);
+        isKnockedBack = false;
+        animator.SetBool("isHurt", false);
+    }
+
     void Move(float move) {
+        if (isKnockedBack) return;
+
         float xVal = move * speed * 100 * Time.fixedDeltaTime;
         Vector2 targetVelocity = new Vector2(xVal, rb.velocity.y);
         rb.velocity = targetVelocity;
@@ -68,10 +93,15 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
     }
 
-    void Jump() {
-        if (isGrounded) {
+    public void Jump() {
+        if (isGrounded || killEnemy) {
+            killEnemy = false;
             rb.velocity = Vector2.up * jumpForce;
             animator.SetBool("Jump", true);
         }
+    }
+
+    public void SetKillEnemy(bool value) {
+        killEnemy = value;
     }
 }

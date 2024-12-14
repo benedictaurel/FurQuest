@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cherry
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Items
   - 
   - 
   - 
@@ -47,9 +49,15 @@ TagManager:
   - name: Prop
     uniqueID: 705370003
     locked: 0
+  - name: Items
+    uniqueID: 1234885189
+    locked: 0
   - name: Entity
     uniqueID: 3316939457
     locked: 0
   - name: Foreground
     uniqueID: 2988793017
+    locked: 0
+  - name: UI
+    uniqueID: 4046343611
     locked: 0
