@@ -15,8 +15,6 @@ public class Player : MonoBehaviour
     PlayerMovement playerMovement;
     FrogEnemies frogEnemies;
     EagleEnemies eagleEnemies;
-    OpossumEnemies opossumEnemies;
-    PigEnemies pigEnemies;
 
     void Awake() {
         if (Instance == null) {
@@ -90,10 +88,6 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.simulated = false;
         }
-
-        foreach (Animator animator in FindObjectsOfType<Animator>()) {
-            animator.enabled = false;
-        }
     }
 
     void UnfreezeTime() {
@@ -102,10 +96,6 @@ public class Player : MonoBehaviour
         Rigidbody2D[] allRigidbodies = FindObjectsOfType<Rigidbody2D>();
         foreach (Rigidbody2D rb in allRigidbodies) {
             rb.simulated = true;
-        }
-
-        foreach (Animator animator in FindObjectsOfType<Animator>()) {
-            animator.enabled = true;
         }
     }
 
@@ -124,7 +114,6 @@ public class Player : MonoBehaviour
 
         playerMovement.animator.SetBool("isHurt", false);
         playerMovement.isKnockedBack = false;
-        playerMovement.animator.SetFloat("xVelocity", 0);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

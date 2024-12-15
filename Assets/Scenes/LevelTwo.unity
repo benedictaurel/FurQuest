@@ -1365,6 +1365,7 @@ MonoBehaviour:
   - {fileID: 1345861743}
   nextWaypoint: 0
   speed: 2
+  isDead: 0
 --- !u!1 &646581423
 GameObject:
   m_ObjectHideFlags: 0
@@ -20870,28 +20871,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8073663209919198731, guid: ae1212e22d164fc49be40f0e914d4e7d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1339326769}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1212e22d164fc49be40f0e914d4e7d, type: 3}
---- !u!1 &1339326768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8073663209919198731, guid: ae1212e22d164fc49be40f0e914d4e7d, type: 3}
-  m_PrefabInstance: {fileID: 1339326767}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1339326769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339326768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95c09a7048b904a4abf42bea92006aef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1345861742
 GameObject:
   m_ObjectHideFlags: 0
@@ -21864,6 +21845,7 @@ MonoBehaviour:
   - {fileID: 2082181064}
   nextWaypoint: 0
   speed: 2
+  isDead: 0
 --- !u!1 &2147326960
 GameObject:
   m_ObjectHideFlags: 0

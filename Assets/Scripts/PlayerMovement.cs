@@ -136,7 +136,6 @@ public class PlayerMovement : MonoBehaviour
         canClimb = false;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.gravityScale = 1f;
-        animator.SetBool("isClimbing", false);
     }
 
     public void SetKillEnemy(bool value) {
@@ -146,6 +145,7 @@ public class PlayerMovement : MonoBehaviour
     void Climb() {
         isClimbing = true;
         if (Input.GetButtonDown("Jump")) {
+            animator.SetBool("isClimbing", false);
             Jump();
             return;
         }
