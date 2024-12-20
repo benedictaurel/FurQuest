@@ -39,7 +39,9 @@ public class PlayerMovement : MonoBehaviour
         horizontalMove = Input.GetAxis("Horizontal");
 
         if (Input.GetButtonDown("Jump")) {
+            animator.SetBool("isClimbing", false);
             Jump();
+            ResetClimbingState();
         }
         
         animator.SetFloat("yVelocity", rb.velocity.y);
@@ -136,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
         canClimb = false;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.gravityScale = 1f;
+        animator.speed = 1f;
     }
 
     public void SetKillEnemy(bool value) {

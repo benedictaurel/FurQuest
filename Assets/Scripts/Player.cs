@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     PlayerMovement playerMovement;
     FrogEnemies frogEnemies;
     EagleEnemies eagleEnemies;
+    OpossumEnemies opossumEnemies;
+    PigEnemies pigEnemies;
 
     void Awake() {
         if (Instance == null) {
@@ -41,7 +43,7 @@ public class Player : MonoBehaviour
 
                 if (other.gameObject.GetComponent<FrogEnemies>() != null) {
                     frogEnemies = other.gameObject.GetComponent<FrogEnemies>();
-                    frogEnemies.animator.SetBool("isDead", true);
+                    frogEnemies.Die();
                 }
 
                 if (other.gameObject.GetComponent<EagleEnemies>() != null) {
@@ -49,10 +51,20 @@ public class Player : MonoBehaviour
                     eagleEnemies.Die();
                 }
 
+                if (other.gameObject.GetComponent<OpossumEnemies>() != null) {
+                    opossumEnemies = other.gameObject.GetComponent<OpossumEnemies>();
+                    opossumEnemies.Die();
+                }
+
+                if (other.gameObject.GetComponent<PigEnemies>() != null) {
+                    pigEnemies = other.gameObject.GetComponent<PigEnemies>();
+                    pigEnemies.Die();
+                }
+
                 Destroy(other.gameObject, 0.5f);
 
                 if (other.transform.parent != null) {
-                    Destroy(other.transform.parent.gameObject);
+                    Destroy(other.transform.parent.gameObject, 0.5f);
                 }
             } else {
                 TakeDamage();

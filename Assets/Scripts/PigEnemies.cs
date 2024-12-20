@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class PigEnemies : Enemy
 {
+    public Animator animator;
+
     int changeValue = 1;
     public int nextWaypoint = 0;
     public float speed = 2;
-    public bool isDead = false;
+
+    void Awake() {
+        animator = GetComponent<Animator>();
+    }
 
     void Update() {
         MoveToNextPoint();
@@ -33,5 +38,10 @@ public class PigEnemies : Enemy
 
             nextWaypoint += changeValue;
         }
+    }
+
+    public void Die() {
+        animator.SetBool("isDead", true);
+        speed = 0;
     }
 }

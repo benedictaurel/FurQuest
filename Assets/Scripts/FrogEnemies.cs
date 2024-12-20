@@ -72,4 +72,9 @@ public class FrogEnemies : MonoBehaviour
 
         StartCoroutine(IdleDelay());
     }
+
+    public void Die() {
+        animator.SetBool("isDead", true);
+        rb.velocity = Vector2.zero;
+    }
 }

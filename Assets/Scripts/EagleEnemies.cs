@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EagleEnemies : MonoBehaviour
 {
-    public bool isDead = false;
     public Animator animator;
 
     void Awake() {
@@ -12,7 +11,6 @@ public class EagleEnemies : MonoBehaviour
     }
 
     public void Die() {
-        isDead = true;
         animator.SetBool("isDead", true);
     }
 }
