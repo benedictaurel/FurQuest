@@ -29,12 +29,6 @@ public class Player : MonoBehaviour
         lives = GameObject.Find("Health").GetComponentsInChildren<Image>();
     }
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.E)) {
-            TakeDamage();
-        }
-    }
-
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Enemy")) {
             if (playerMovement.animator.GetFloat("yVelocity") < -1) {
