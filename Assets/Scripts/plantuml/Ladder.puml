@@ -1,0 +1,11 @@
+@startuml
+class Ladder {
+}
+enum LadderPart {
+    Complete,
+    Top,
+    Bottom,
+}
+MonoBehaviour <|-- Ladder
+Ladder +-- LadderPart
+@enduml

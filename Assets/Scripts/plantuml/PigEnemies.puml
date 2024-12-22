@@ -1,0 +1,9 @@
+@startuml
+class PigEnemies {
+    + nextWaypoint : int = 0
+    + speed : float = 2
+    + Die() : void
+}
+Enemy <|-- PigEnemies
+PigEnemies --> "animator" Animator
+@enduml

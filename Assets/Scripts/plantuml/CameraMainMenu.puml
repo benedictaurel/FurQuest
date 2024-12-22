@@ -1,0 +1,7 @@
+@startuml
+class CameraMainMenu {
+    + speed : float = 2
+    + nextWaypoint : int = 0
+}
+MonoBehaviour <|-- CameraMainMenu
+@enduml

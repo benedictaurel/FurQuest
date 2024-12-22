@@ -1,0 +1,10 @@
+@startuml
+class MovingPlatform {
+    + moveSpeed : float = 2
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- MovingPlatform
+MovingPlatform --> "points<Transform>" "List`1"
+MovingPlatform --> "platform" Transform
+@enduml

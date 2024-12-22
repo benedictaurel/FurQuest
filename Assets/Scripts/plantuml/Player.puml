@@ -1,0 +1,11 @@
+@startuml
+class Player {
+    + cherries : int = 3
+    + isDead : bool = false
+    + TakeDamage() : void
+    + AddCherry() : void
+    + GetCherries() : int
+}
+MonoBehaviour <|-- Player
+Player --> "Instance" Player
+@enduml

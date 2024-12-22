@@ -1,0 +1,6 @@
+@startuml
+class CameraOne {
+}
+MonoBehaviour <|-- CameraOne
+CameraOne --> "Instance" CameraOne
+@enduml

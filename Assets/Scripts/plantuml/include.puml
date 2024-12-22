@@ -1,0 +1,19 @@
+@startuml
+!include .\\CameraMainMenu.puml
+!include .\\CameraOne.puml
+!include .\\CameraTwo.puml
+!include .\\EagleEnemies.puml
+!include .\\Enemy.puml
+!include .\\FrogEnemies.puml
+!include .\\GameManager.puml
+!include .\\Item.puml
+!include .\\Ladder.puml
+!include .\\LevelManager.puml
+!include .\\MovingPlatform.puml
+!include .\\OpossumEnemies.puml
+!include .\\PigEnemies.puml
+!include .\\Player.puml
+!include .\\PlayerMovement.puml
+!include .\\Portal.puml
+!include .\\TeleportDoor.puml
+@enduml

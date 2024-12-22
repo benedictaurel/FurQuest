@@ -1,0 +1,7 @@
+@startuml
+class FrogEnemies {
+    + Die() : void
+}
+MonoBehaviour <|-- FrogEnemies
+FrogEnemies --> "animator" Animator
+@enduml
