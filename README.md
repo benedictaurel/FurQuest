@@ -1,52 +1,53 @@
 # <p align="center"><img src="https://hackmd.io/_uploads/Hyu6VjBryl.png" width="400"></p>
 
-**Fur Quest** adalah game 2D platformer yang mengisahkan perjalanan penuh tantangan seorang ayah rubah bernama Reynard yang bertekad menemui anaknya. Dalam perjalanan ini, pemain akan menghadapi berbagai monster yang berbahaya, melompati rintangan, dan mengumpulkan buah-buahan untuk memulihkan energi. Dengan modern pixel art style dan dunia yang penuh warna, Fur Quest akan menguji ketangkasan serta strategi pemain dalam menyelesaikan setiap level.
+**Fur Quest** is a 2D platformer game that tells the challenging journey of a fox father named Reynard, determined to reunite with his child. Throughout the journey, players will face dangerous monsters, leap over obstacles, and collect fruits to restore energy. With a modern pixel art style and a colorful world, Fur Quest will test players' agility and strategy in completing each level.
 
 ## 🏛️ Design Pillars
 ### 🔹 Main Game View
-FurQuest disajikan dalam perspektif 2D side-scrolling. Pemain akan melihat karakter sang rubah yang dapat bergerak dari kiri ke kanan serta lompat (atas ke bawah).
+Fur Quest is presented in a 2D side-scrolling perspective. Players will see the fox character move left and right, as well as jump (up and down).
 
 ### 🔹 Core Player Activity
-Tugas utama pemain adalah membantu sang ayah Rubah untuk mencapai anaknya dengan: 
-- Melompati Rintangan, pemain harus melewati platform dan rintangan seperti jurang, jembatan atau tangga.
-- Menghindari dan Melawan Monster, pemain harus menghindari kontak dengan monster jika tidak ingin mengurangi healthpoint mereka. Pemain pada awalnya memiliki 3 healthpoint artinya pemain memiliki kesempatan bersentuhan dengan monster maksimal 3 kali sebelum game over. Monster dapat dikalahkan dengan melompat diatas mereka. 
-- Healthpoint Heal, dengan beberapa trik lompatan tertentu, pemain bisa mengambil buah cherry untuk mengembalikan healthpoint yang sudah hilang.
+The main objective for players is to help the fox father Reynard reach his child by:
+- **Jumping Over Obstacles**: Players must navigate platforms and obstacles such as cliffs, bridges, or ladders.
+- **Avoiding and Defeating Monsters**: Players must avoid contact with monsters to prevent health points loss. Initially, the player has 3 health points, meaning they can withstand up to three encounters with monsters before the game ends. Monsters can be defeated by jumping on them.
+- **Healthpoint Recovery**: By executing certain jump tricks, players can collect cherries to recover lost health points.
 
 ### 🔹 In-Game User Interface
 <img src="https://hackmd.io/_uploads/rk6lFjrByx.png" width="400">
 
 ## 🎮 Genre/Story/Mechanics Summary
 ### 🔹 Character Background and Game Mood
-Ayah rubah dalam Fur Quest, bernama Reynard, adalah sosok yang pemberani dan penuh kasih sayang terhadap anaknya. Setelah mendapat kabar bahwa anaknya memerlukan bantuan di rumah, Reynard dengan segera harus sampai ke rumah anaknya.
+Reynard, the fox father in Fur Quest, is a brave and loving character devoted to his child. After hearing that his child needs help at home, Reynard immediately sets out to reach his child.
 
-Walau dunia Fur Quest terlihat penuh warna, namun monster dalam game ini tetap merupakan ancaman bagi Reynard dan tentu akan mengganggu perjalanan Reynard.
+While the world of Fur Quest appears vibrant and colorful, monsters in the game are a threat to Reynard and will hinder his journey.
 
 ### 🔹 Gameplay Mechanics
-- Player Properties
-  - Dapat bergerak ke arah kiri / kanan, dan atas / bawah (melompat)
-  - Memiliki HP (health Point) sebesar 3 
-  - Mengurangi 1 HP dan mengalami knockback ketika terkena serangan (bertabrakan) dengan musuh
-  - Dapat mengalahkan musuh dengan cara mengenai kepala musuh
-  - Mendapatkan jump-boost (1 ekstra lompatan) setelah mengalahkan musuh
-  - Menambahkan 1 point HP ketika mengambil item cherry (selama HP saat ini di bawah 3)
-- Frog Enemy
-  - Dapat melompat
-   - Mengurangi 1 HP jika menyentuh pemain
-   - Dapat dikalahkan dengan melompat di kepala
-- Opossum Enemy
-  - Bergerak ke kanan dan ke kiri
-   - Mengurangi 1 HP jika menyentuh pemain
-   - Dapat dikalahkan dengan melompat di kepala
-- Pig Enemy
-  - Bergerak lebih cepat dibandingkan musuh lainnya
-   - Mengurangi 1 HP jika menyentuh pemain
-   - Dapat dikalahkan dengan melompat di kepala
-- Eagle Enemy
-  - Tidak menyerang atau bergerak
-   - Berfungsi sebagai platform melayang
-   - Dapat dikalahkan dengan melompat di kepala
+- **Player Properties**
+  - Can move left/right and up/down (jump)
+  - Has 3 health points (HP)
+  - Loses 1 HP and experiences knockback upon colliding with an enemy
+  - Can defeat enemies by landing on their heads
+  - Gains a jump-boost (1 extra jump) after defeating an enemy
+  - Recovers 1 HP when collecting a cherry (if current HP is below 3)
+- **Frog Enemy**
+  - Can jump
+  - Reduces 1 HP upon contact with the player
+  - Can be defeated by jumping on its head
+- **Opossum Enemy**
+  - Moves left and right
+  - Reduces 1 HP upon contact with the player
+  - Can be defeated by jumping on its head
+- **Pig Enemy**
+  - Moves faster than other enemies
+  - Reduces 1 HP upon contact with the player
+  - Can be defeated by jumping on its head
+- **Eagle Enemy**
+  - Does not attack or move
+  - Functions as a floating platform
+  - Can be defeated by jumping on its head
+
 ## 🗺️ Level Design
-Pada saat ini, FurQuest memiliki 2 level yang tersedia, pada masing masing level, terdapat jenis musuh yang berbeda, dan item berupa cherry. Pada level 1, terdapat sebuah portal yang jika disentuh akan membawa player ke level 2. Pada level 2, terdapat object pintu, yang dapat digunakan untuk mengulangi stage, dan terdapat rumah dari anak reynard yang menjadi tujuan akhir dari game in.
+Currently, Fur Quest has 2 available levels, each featuring different enemy types and cherry items. In Level 1, there is a portal that, when touched, takes the player to Level 2. In Level 2, there is a door object that allows players to restart the stage, and the house of Reynard's child serves as the game's final goal.
 
 ### 🔹 Level 1
 <img src="https://hackmd.io/_uploads/rk5PcsBB1x.png" width="400">
@@ -55,32 +56,32 @@ Pada saat ini, FurQuest memiliki 2 level yang tersedia, pada masing masing level
 <img src="https://hackmd.io/_uploads/Hygq9irBkl.png" width="400">
 
 ## 🕹️ Interface
-### 🔹 Kendali Player
-| **Tombol**       | **Aksi**                 | **Game State**        |
+### 🔹 Player Controls
+| **Button**       | **Action**               | **Game State**        |
 |-------------------|--------------------------|-----------------------|
-| Tombol apapun     | Start game               | Main Menu            |
-| W, D             | Menggerakan player       | In-game              |
-| Spacebar         | Melompat                 | In-game              |
-| A, S             | Menaiki / menuruni tangga| In-game, at ladder   |
-| Spacebar         | Melepas tangga           | In-game, at ladder   |
+| Any key           | Start game               | Main Menu             |
+| W, D             | Move player              | In-game               |
+| Spacebar         | Jump                     | In-game               |
+| A, S             | Climb/descend ladders    | In-game, at ladder    |
+| Spacebar         | Release ladder           | In-game, at ladder    |
 
-### 🔹 Interaksi Player
-| **Objek/Entitas** | **Interaksi**                        | **Respons**                                                                |
-|--------------------|--------------------------------------|----------------------------------------------------------------------------|
-| Enemy (semua tipe) | Bersentuhan dari samping            | Healthpoint player -1                                                     |
-| Enemy (semua tipe) | Bersentuhan dari atas               | Enemy mati, player mendapatkan *jump-boost*                               |
-| Cherry             | Bersentuhan dengan benda            | Memulihkan/menambahkan 1 HP ketika HP saat ini < 3                        |
-| Portal             | Bersentuhan dengan benda            | Player akan memasuki level berikutnya                                     |
-| Door               | Bersentuhan dengan benda            | Player akan *respawn* (mengulangi stage dari awal)                        |
-| Ladder             | Menekan A / S                       | Player memasuki mode *climbing*                                           |
-| Ladder             | Menekan Spacebar                    | Player keluar dari mode *climbing*                                        |
+### 🔹 Player Interactions
+| **Object/Entity** | **Interaction**                     | **Response**                                                          |
+|--------------------|-------------------------------------|------------------------------------------------------------------------|
+| Enemy (all types) | Contact from the side               | Player loses 1 HP                                                     |
+| Enemy (all types) | Contact from above                  | Enemy dies, player gains a jump-boost                                 |
+| Cherry             | Contact                            | Restores/adds 1 HP if current HP < 3                                  |
+| Portal             | Contact                            | Player proceeds to the next level                                     |
+| Door               | Contact                            | Player respawns (restarts the stage from the beginning)               |
+| Ladder             | Press A/S                          | Player enters climbing mode                                           |
+| Ladder             | Press Spacebar                     | Player exits climbing mode                                            |
 
 ## 🎵 Music/Sound Assets
-| **Tipe** | **Deskripsi**                 | **Penggunaan**                         | **Nama File**             |
-|----------|-------------------------------|-----------------------------------------|---------------------------|
-| Musik    | Musik Main Menu (loop)        | Musik latar belakang Main Menu         | hurry_up_and_run.mp3      |
-| Musik    | Musik Overworld (loop)        | Musik latar belakang level Overworld   | Hurt_and_heart.ogg        |
-| Musik    | Musik Underground (loop)      | Musik latar belakang level Underground | under the rainbow.ogg     |
+| **Type** | **Description**            | **Usage**                            | **File Name**             |
+|----------|----------------------------|--------------------------------------|---------------------------|
+| Music    | Main Menu Music (loop)     | Background music for Main Menu       | hurry_up_and_run.mp3      |
+| Music    | Overworld Music (loop)     | Background music for Overworld level | Hurt_and_heart.ogg        |
+| Music    | Underground Music (loop)   | Background music for Underground     | under the rainbow.ogg     |
 
 ## 👨‍💻 Group Members
 #### 🔹 **Anthonius Hendhy Wirawan** - 2306161795
