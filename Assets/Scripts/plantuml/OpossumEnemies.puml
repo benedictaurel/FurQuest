@@ -1,0 +1,9 @@
+@startuml
+class OpossumEnemies {
+    + nextWaypoint : int = 0
+    + speed : float = 2
+    + Die() : void
+}
+Enemy <|-- OpossumEnemies
+OpossumEnemies --> "animator" Animator
+@enduml

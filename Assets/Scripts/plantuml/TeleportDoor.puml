@@ -1,0 +1,5 @@
+@startuml
+class TeleportDoor {
+}
+MonoBehaviour <|-- TeleportDoor
+@enduml

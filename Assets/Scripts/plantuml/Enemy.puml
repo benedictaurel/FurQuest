@@ -1,0 +1,8 @@
+@startuml
+class Enemy {
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- Enemy
+Enemy --> "points<Transform>" "List`1"
+@enduml

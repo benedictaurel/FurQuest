@@ -1,0 +1,7 @@
+@startuml
+class EagleEnemies {
+    + Die() : void
+}
+MonoBehaviour <|-- EagleEnemies
+EagleEnemies --> "animator" Animator
+@enduml

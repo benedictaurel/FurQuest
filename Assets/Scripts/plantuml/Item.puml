@@ -1,0 +1,5 @@
+@startuml
+class Item {
+}
+MonoBehaviour <|-- Item
+@enduml

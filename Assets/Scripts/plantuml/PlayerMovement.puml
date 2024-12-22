@@ -1,0 +1,14 @@
+@startuml
+class PlayerMovement {
+    + isKnockedBack : bool = false
+    + canClimb : bool = false
+    + bottomLadder : bool = false
+    + topLadder : bool = false
+    + Knockback(isRight:bool) : void
+    + Jump() : void
+    + SetKillEnemy(value:bool) : void
+}
+MonoBehaviour <|-- PlayerMovement
+PlayerMovement --> "animator" Animator
+PlayerMovement --> "ladder" Ladder
+@enduml
